@@ -37,7 +37,7 @@ def Aries_estimation(candidate_data, drop_model=None, base_map=None, base_acc=No
     base_consistent = base_consistent[x_ind]
     base_probability = base_probability[x_ind]
     acc1 = np.sum(consistant_list * base_probability)
-    acc2 = base_acc * (consistant_list[-1] / base_consistent[-1]) * 10000
+    acc2 = base_acc * (consistant_list[-1] / base_consistent[-1]) * len(candidate_data)
     estimated_acc = (acc1 + acc2) / 2
     print(estimated_acc)
     return estimated_acc, acc1, acc2
